@@ -1,0 +1,248 @@
+.task-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.task-item:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.task-item.completed {
+  background: var(--completed-bg);
+  opacity: 0.7;
+}
+
+.task-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.checkbox {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.checkbox:hover {
+  border-color: var(--accent);
+}
+
+.task-item.completed .checkbox {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+}
+
+.checkmark {
+  color: var(--bg-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.task-text-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.task-text {
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  word-break: break-word;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: var(--completed-text);
+}
+
+.subtask-count {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  background: var(--bg-tertiary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.action-btn:hover {
+  background: var(--bg-tertiary);
+  border-color: var(--accent);
+}
+
+.delete-btn {
+  color: var(--text-tertiary);
+}
+
+.delete-btn:hover {
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.subtask-input-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.subtask-input {
+  flex: 1;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.subtask-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--bg-secondary);
+}
+
+.subtask-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.subtask-add-btn {
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.subtask-add-btn:hover {
+  background: var(--accent-hover);
+}
+
+.subtasks {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.subtask-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem;
+  padding-left: 1.5rem;
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+  transition: all 0.3s ease;
+}
+
+.subtask-item.completed {
+  opacity: 0.6;
+}
+
+.subtask-checkbox {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 5px;
+}
+
+.subtask-item.completed .subtask-checkbox {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.subtask-text {
+  flex: 1;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  word-break: break-word;
+}
+
+.subtask-item.completed .subtask-text {
+  text-decoration: line-through;
+  color: var(--completed-text);
+}
+
+.subtask-delete {
+  width: 28px;
+  height: 28px;
+  font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .task-item {
+    padding: 1rem;
+  }
+
+  .task-main {
+    gap: 0.75rem;
+  }
+
+  .task-content {
+    gap: 0.75rem;
+  }
+
+  .action-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1.125rem;
+  }
+}
